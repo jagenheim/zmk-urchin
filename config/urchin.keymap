@@ -17,7 +17,7 @@
 //#define FNC 3
 //#define SYM2 4
 //#define ACCENT 5
-//#define SETTINGS 6
+#define SETTINGS 2
 // -----------------
 
 //&sk {
@@ -110,10 +110,10 @@
 		sym_layer {
 			label = "Sym.1";
 			bindings = <
-			&kp X &kp X &kp X &kp X &kp X                &kp N6     &kp N7   &kp N8   &kp N9   &kp PLUS
-			&kp LPAR &kp LBRC &kp LBKT &kp X &kp X      &kp N0     &kp N4   &kp N5   &kp N6   &kp ENTER
+			&kp X &kp X &kp X &kp X &kp X                &kp X     &kp N7   &kp N8   &kp N9   &kp PLUS
+			&kp LPAR &kp LBRC &kp LBKT &kp X &kp X      &kp X     &kp N4   &kp N5   &kp N6   &kp ENTER
 			&kp RPAR &kp RBRC &kp RBKT &kp X &kp X   	&kp N0     &kp N1   &kp N2   &kp N3   &kp MINUS
-									&trans  &trans       &trans &trans
+			    			   &mo SETTINGS  &trans       &trans &trans
 			>;
 		};
 
@@ -161,15 +161,15 @@
 //			>;
 //		};
 //
-//		// Used to change the keyboard's settings.
-//		settings_layer {
-//				label = "Sett.";
-//				bindings = <
-//				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &unstick &none &bootloader 
-//				&none &none &none &none      &bt BT_SEL 1 						  &bt BT_SEL 4 &none &none &none &none
-//				&none &none &none &none      &bt BT_SEL 2               &bt BT_SEL 5 &none &none &none &none
-//										&none &none                         &none &none 
-//				>;
-//		};
+		// Used to change the keyboard's settings.
+		settings_layer {
+				label = "Sett.";
+				bindings = <
+				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &none &none &bootloader 
+				&none &none &none &none            &bt BT_SEL 1 		  	  &bt BT_SEL 4 &none &none &none &none
+				&none &none &none &none            &bt BT_SEL 2               &bt BT_SEL 5 &none &none &none &none
+										&none &none                         &none &none 
+				>;
+		};
 	};
 };

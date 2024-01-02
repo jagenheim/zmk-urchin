@@ -13,11 +13,11 @@
 // Layer definitions
 #define BASE 0
 #define SYM 1
-//#define EXT 2
+#define CURS 2
 //#define FNC 3
 //#define SYM2 4
 //#define ACCENT 5
-#define SETTINGS 2
+#define SETTINGS 3
 // -----------------
 
 //&sk {
@@ -99,10 +99,10 @@
         default_layer {
             label = "Base";
             bindings = <
-            &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-            &bhm LSHIFT A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &bhm RSHIFT SEMICOLON
-            &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp SLASH
-                            &kp ESCAPE &mo SYM           &kp BACKSPACE &kp SPACE
+            &kp Q           &kp W       &kp F &kp P &kp B            &kp J           &kp L  &kp U     &kp Y     &kp X
+            &bhm LSHIFT A   &kp R       &kp S &kp T &kp G            &kp M           &kp N  &kp E     &kp I     &bhm RSHIFT O
+            &kp X           &kp C       &kp D &kp V &kp Z            &kp K           &kp H  &kp COMMA &kp DOT   &kp SLASH
+                            &mo CURS  &mo SYM                      &kp BACKSPACE   &kp SPACE
             >;
         };
 
@@ -113,21 +113,21 @@
             &kp X &kp X &kp X &kp X &kp X                &kp X     &kp N7   &kp N8   &kp N9   &kp PLUS
             &kp LPAR &kp LBRC &kp LBKT &kp X &kp X       &kp N0    &kp N4   &kp N5   &kp N6   &kp ENTER
             &kp RPAR &kp RBRC &kp RBKT &kp X &kp X       &kp X     &kp N1   &kp N2   &kp N3   &kp MINUS
-                               &mo SETTINGS  &trans       &trans &trans
+                               &mo SETTINGS  &trans       &kp ESCAPE &trans
             >;
         };
 
-//      // Main modifiers and arrow keys
-//      ext_layer {
-//          label = "Mods";
-//          bindings = <
-//          &kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE       &kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-//          &sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT          &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-//          &kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
-//                                          &trans &kp LCTRL    &kp ENTER  &mo FNC 
-//          >;
-//      };
-//
+      // Allow hjkl for vim usage, will also put other shit here
+      ext_layer {
+          label = "Curs";
+          bindings = <
+          &kp X  &kp X &kp X  &kp X  &kp X       &kp X  &kp X &kp X &kp X &kp X
+          &sk X &sk X  &sk X  &sk X  &kp X          &kp H &kp J  &kp K  &kp L   &kp X
+          &kp X  &kp X &kp X &kp X   &kp X          &kp X &kp X &trans &trans  &trans
+                                          &trans &trans                 &trans  &trans
+          >;
+      };
+
 //      // Function keys with modifiers
 //      fnc_layer {
 //          label = "FRow";
